@@ -7,6 +7,7 @@ name = "my-project"
 version = "0.1.0"  # Única fuente de verdad de la versión. Ver docs/versioning.md
 description = "Descripción corta del proyecto."
 readme = "README.md"
+license = "MIT"
 requires-python = ">=3.11"
 authors = [{ name = "AUTHOR" }]
 dependencies = []

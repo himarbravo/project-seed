@@ -10,6 +10,8 @@ Antes de crear un archivo, consulta esta guía. Si algo no encaja en ningún sit
 my-project/
 ├── AGENTS.md                  # Protocolo de trabajo (GitHub, ramas, commits, PRs)
 ├── CLAUDE.md                  # Importa AGENTS.md para Claude Code
+├── GEMINI.md                  # Importa AGENTS.md para Gemini CLI
+├── LICENSE                    # Licencia del proyecto (MIT por defecto)
 ├── README.md                  # Qué es el proyecto y cómo arrancarlo
 ├── CHANGELOG.md               # Historial de cambios por versión
 ├── pyproject.toml             # Metadatos, VERSIÓN, dependencias y config de herramientas
@@ -20,6 +22,7 @@ my-project/
 │   ├── workflows/             # CI: lint, tipos y tests (ci.yml); convenciones del PR (pr.yml)
 │   ├── dependabot.yml         # Actualización automática de dependencias y acciones
 │   ├── ISSUE_TEMPLATE/        # Plantillas de issues (feature, bug, tarea)
+│   ├── copilot-instructions.md  # Dirige a Copilot a AGENTS.md
 │   └── pull_request_template.md
 │
 ├── docs/
