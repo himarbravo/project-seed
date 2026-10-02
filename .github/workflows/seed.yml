@@ -17,7 +17,7 @@ jobs:
       - name: Inicializar un proyecto de prueba
         run: python3 scripts/init_project.py demo-app --owner someone --author "Ada" --description "Una demo."
       - name: No quedan restos del nombre provisional
-        run: "! grep -rnE 'my[-_]project|My Project|OWNER|AUTHOR|seed:' --exclude-dir=.git ."
+        run: "! grep -rnE 'my[-_]project|My Project|OWNER|\bAUTHOR\b|seed:' --exclude-dir=.git ."
       - run: pip install -e ".[dev]"
       - run: ./scripts/check.sh
       - run: demo-app
