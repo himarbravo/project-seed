@@ -70,3 +70,7 @@ ruff format .           # formato
 | [docs/architecture.md](docs/architecture.md) | Cómo funciona por dentro |
 | [docs/versioning.md](docs/versioning.md) | Versiones y releases |
 | [docs/adr/](docs/adr/) | Decisiones de arquitectura |
+
+## Licencia
+
+[MIT](LICENSE). Si el proyecto necesita otra, cambia `LICENSE` y el campo `license` de `pyproject.toml`.

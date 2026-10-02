@@ -13,6 +13,7 @@ Uso (desde la raíz del repositorio, una sola vez):
 import argparse
 import re
 import sys
+from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -46,7 +47,9 @@ def main() -> None:
         sys.exit("No existe src/my_project/: este proyecto ya está inicializado.")
 
     package = args.name.replace("-", "_")
+    year = date.today().year
     replacements = {
+        "(c) YEAR": f"(c) {year}",
         "my-project": args.name,
         "my_project": package,
         "My Project": args.name.replace("-", " ").title(),
@@ -55,6 +58,7 @@ def main() -> None:
         replacements["github.com/OWNER/"] = f"github.com/{args.owner}/"
     if args.author:
         replacements['name = "AUTHOR"'] = f'name = "{args.author}"'
+        replacements[f"(c) {year} AUTHOR"] = f"(c) {year} {args.author}"
     if args.description:
         replacements["Descripción corta del proyecto."] = args.description
 
