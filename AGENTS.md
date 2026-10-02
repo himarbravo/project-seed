@@ -124,6 +124,22 @@ Ejecútalos antes de abrir o actualizar un PR.
 | Tests        | `pytest` |
 | Lint         | `ruff check .` |
 | Formato      | `ruff format .` (CI comprueba con `ruff format --check .`) |
+| Tipos        | `mypy` |
+| Todo junto   | `./scripts/check.sh` (lo mismo que ejecuta la CI) |
+
+### 5.1 Controles automáticos
+
+Estas normas no dependen de que alguien las recuerde: las comprueba GitHub en cada PR.
+
+| Control | Qué exige | Dónde está |
+|---------|-----------|------------|
+| `required` | Lint, formato, tipos y tests en verde | [.github/workflows/ci.yml](.github/workflows/ci.yml) |
+| `conventions` | Título del PR y nombre de rama según las secciones 2.2 y 2.3 | [.github/workflows/pr.yml](.github/workflows/pr.yml) |
+| Protección de `main` | Sin push directo, sin force-push, solo squash merge con los checks en verde | [scripts/setup_github.sh](scripts/setup_github.sh) |
+
+- Si un control falla, se arregla la causa. Nunca se edita el workflow ni la protección para que pase.
+- Las ramas `dependabot/...` las crea Dependabot para actualizar dependencias y son la única excepción al formato de nombres.
+- `scripts/setup_github.sh` cambia la configuración del repositorio: lo ejecuta una persona, no un agente.
 
 ---
 

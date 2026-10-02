@@ -19,16 +19,16 @@ Este repositorio es una plantilla: un proyecto Python vacío con el protocolo de
    python3 scripts/init_project.py <nombre> --owner <usuario> --author "<Tu nombre>" \
        --description "<Qué hace el proyecto>"
    ```
-3. Crea los labels que usa [AGENTS.md](AGENTS.md) (las plantillas no los copian):
-   ```bash
-   for l in type:feature type:bug type:refactor type:docs type:chore; do gh label create "$l" --force; done
-   ```
-4. Instala, comprueba y sube el primer commit:
+3. Instala, comprueba y sube el primer commit:
    ```bash
    python3 -m venv .venv && source .venv/bin/activate
    pip install -e ".[dev]"
-   ruff check . && ruff format --check . && pytest
+   ./scripts/check.sh
    git add -A && git commit -m "chore: inicializar proyecto desde la semilla" && git push
+   ```
+4. Configura el repositorio: crea los labels que usa [AGENTS.md](AGENTS.md), deja solo squash merge y protege `main`. Va después del primer push, porque a partir de aquí ya no se puede empujar directo a `main`:
+   ```bash
+   ./scripts/setup_github.sh
    ```
 5. Adapta lo que es propio de cada proyecto: [docs/architecture.md](docs/architecture.md), [docs/project-structure.md](docs/project-structure.md) y la sección 4 de [AGENTS.md](AGENTS.md).
 <!-- seed:end -->
@@ -59,6 +59,8 @@ my-project              # o: python -m my_project
 pytest                  # tests
 ruff check .            # lint
 ruff format .           # formato
+mypy                    # tipos
+./scripts/check.sh      # todo lo anterior, como en la CI
 ```
 
 ## Documentación
