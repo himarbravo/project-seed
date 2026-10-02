@@ -18,4 +18,5 @@ Closes #
 - [ ] Lint y tests pasan en local
 - [ ] Tests añadidos/actualizados
 - [ ] Docs actualizadas (README, AGENTS.md, ADR) si aplica
+- [ ] Entrada en `CHANGELOG.md` → `[Unreleased]` si cambia algo visible para el usuario
 - [ ] Sin secretos ni ficheros ajenos a la tarea
