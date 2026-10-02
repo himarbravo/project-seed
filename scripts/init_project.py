@@ -1,8 +1,8 @@
 """Convierte la semilla en un proyecto con nombre propio.
 
 Sustituye el nombre provisional `my-project` en todos los archivos, renombra el
-paquete `src/my_project/`, borra del README la sección de uso de la semilla y
-se borra a sí mismo.
+paquete `src/my_project/`, borra del README la sección de uso de la semilla,
+borra el workflow que prueba la semilla y se borra a sí mismo.
 
 Uso (desde la raíz del repositorio, una sola vez):
 
@@ -72,6 +72,7 @@ def main() -> None:
             path.write_text(text, encoding="utf-8")
 
     (ROOT / "src" / "my_project").rename(ROOT / "src" / package)
+    (ROOT / ".github" / "workflows" / "seed.yml").unlink(missing_ok=True)
     Path(__file__).unlink()
     print(f"Proyecto inicializado como {args.name} (paquete {package}).")
 
