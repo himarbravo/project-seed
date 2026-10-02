@@ -103,10 +103,10 @@ chore(ci): cachear dependencias
 Python ≥ 3.11, *src layout*. **Guía completa: [docs/project-structure.md](docs/project-structure.md)**. Léela antes de crear archivos o carpetas.
 
 Resumen:
-- Código en `src/my_project/`. Cada subpaquete declara en su `__init__.py` su responsabilidad y de quién puede depender.
+- Código en `src/my_project/{core,persistence,ui}/`. Cada `__init__.py` declara la responsabilidad del subpaquete y de quién puede depender.
 - Tests en `tests/`, misma estructura que `src/my_project/`.
 - Utilidades de desarrollo en `scripts/`; documentación en `docs/`.
-- Las dependencias entre subpaquetes van en una sola dirección y se documentan en `docs/project-structure.md`.
+- Dependencias: `core` no depende de nadie, `persistence` solo de `core`, y nadie importa `ui`. Lo comprueba `tests/test_architecture.py`: si falla, se corrige el import, no el test.
 - Una carpeta o subpaquete de primer nivel nuevo requiere issue + ADR antes de crearse.
 - Identificadores en inglés; docstrings, comentarios y documentación en español.
 

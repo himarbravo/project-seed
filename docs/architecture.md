@@ -10,9 +10,11 @@ Pendiente.
 
 ## Módulos
 
-| Módulo | Estado | Notas |
-|--------|--------|-------|
-|        |        |       |
+| Módulo        | Estado    | Notas |
+|---------------|-----------|-------|
+| `core`        | Pendiente | |
+| `persistence` | Pendiente | |
+| `ui`          | Pendiente | |
 
 ## Decisiones relevantes
 
