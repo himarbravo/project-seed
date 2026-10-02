@@ -17,7 +17,8 @@ my-project/
 ├── .gitignore                 # Lo que Git nunca debe guardar
 │
 ├── .github/
-│   ├── workflows/ci.yml       # CI: lint + tests en cada PR
+│   ├── workflows/             # CI: lint, tipos y tests (ci.yml); convenciones del PR (pr.yml)
+│   ├── dependabot.yml         # Actualización automática de dependencias y acciones
 │   ├── ISSUE_TEMPLATE/        # Plantillas de issues (feature, bug, tarea)
 │   └── pull_request_template.md
 │
