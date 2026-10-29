@@ -1,6 +1,6 @@
 name: Seed
 
-# Solo existe en la semilla: scripts/init_project.py borra este archivo.
+# Only exists in the template: scripts/init_project.py deletes this file.
 on:
   pull_request:
   push:
@@ -14,9 +14,9 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
-      - name: Inicializar un proyecto de prueba
-        run: python3 scripts/init_project.py demo-app --owner someone --author "Ada" --description "Una demo."
-      - name: No quedan restos del nombre provisional
+      - name: Initialise a test project
+        run: python3 scripts/init_project.py demo-app --owner someone --author "Ada" --description "A demo."
+      - name: No traces of the placeholder name remain
         run: "! grep -rnE 'my[-_]project|My Project|OWNER|\bAUTHOR\b|seed:' --exclude-dir=.git ."
       - run: pip install -e ".[dev]"
       - run: ./scripts/check.sh
