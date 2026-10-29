@@ -1,13 +1,13 @@
-"""Convierte la semilla en un proyecto con nombre propio.
+"""Turns the template into a project with its own name.
 
-Sustituye el nombre provisional `my-project` en todos los archivos, renombra el
-paquete `src/my_project/`, borra del README la sección de uso de la semilla,
-borra el workflow que prueba la semilla y se borra a sí mismo.
+Replaces the placeholder name `my-project` in every file, renames the
+`src/my_project/` package, removes the template usage section from the README,
+deletes the workflow that tests the template and deletes itself.
 
-Uso (desde la raíz del repositorio, una sola vez):
+Usage (from the repository root, once):
 
-    python3 scripts/init_project.py mi-proyecto --owner usuario --author "Nombre" \
-        --description "Qué hace el proyecto"
+    python3 scripts/init_project.py my-app --owner username --author "Name" \
+        --description "What the project does"
 """
 
 import argparse
@@ -34,17 +34,17 @@ def text_files() -> list[Path]:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Inicializa un proyecto desde la semilla.")
-    parser.add_argument("name", help="nombre del proyecto en kebab-case, p. ej. mi-proyecto")
-    parser.add_argument("--owner", help="usuario u organización de GitHub")
-    parser.add_argument("--author", help="autor que figura en pyproject.toml")
-    parser.add_argument("--description", help="descripción corta del proyecto")
+    parser = argparse.ArgumentParser(description="Initialises a project from the template.")
+    parser.add_argument("name", help="project name in kebab-case, e.g. my-app")
+    parser.add_argument("--owner", help="GitHub user or organisation")
+    parser.add_argument("--author", help="author shown in pyproject.toml")
+    parser.add_argument("--description", help="short project description")
     args = parser.parse_args()
 
     if not re.fullmatch(r"[a-z][a-z0-9]*(-[a-z0-9]+)*", args.name):
-        sys.exit("El nombre debe estar en kebab-case: minúsculas, cifras y guiones.")
+        sys.exit("The name must be kebab-case: lowercase letters, digits and hyphens.")
     if not (ROOT / "src" / "my_project").is_dir():
-        sys.exit("No existe src/my_project/: este proyecto ya está inicializado.")
+        sys.exit("src/my_project/ does not exist: this project is already initialised.")
 
     package = args.name.replace("-", "_")
     year = date.today().year
@@ -78,7 +78,7 @@ def main() -> None:
     (ROOT / "src" / "my_project").rename(ROOT / "src" / package)
     (ROOT / ".github" / "workflows" / "seed.yml").unlink(missing_ok=True)
     Path(__file__).unlink()
-    print(f"Proyecto inicializado como {args.name} (paquete {package}).")
+    print(f"Project initialised as {args.name} (package {package}).")
 
 
 if __name__ == "__main__":
