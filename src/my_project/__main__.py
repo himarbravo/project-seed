@@ -1,4 +1,4 @@
-"""Punto de entrada: `python -m my_project` o el comando `my-project`."""
+"""Entry point: `python -m my_project` or the `my-project` command."""
 
 from my_project import __version__
 

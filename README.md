@@ -1,43 +1,43 @@
 # My Project
 
-Descripción corta del proyecto.
+Short project description.
 
-> Estado: desarrollo inicial (`0.x`). Ver [CHANGELOG.md](CHANGELOG.md).
+> Status: early development (`0.x`). See [CHANGELOG.md](CHANGELOG.md).
 
 <!-- seed:start -->
-## Cómo usar esta semilla
+## How to use this template
 
-Este repositorio es una plantilla: un proyecto Python vacío con el protocolo de trabajo, la documentación base y la CI ya montados. El nombre `my-project` es provisional.
+This repository is a template: an empty Python project with the working protocol, the base documentation and CI already set up. The name `my-project` is a placeholder.
 
-1. Crea tu repositorio a partir de la plantilla y clónalo:
+1. Create your repository from the template and clone it:
    ```bash
-   gh repo create <usuario>/<nombre> --private --template himarbravo/project-seed --clone
-   cd <nombre>
+   gh repo create <user>/<name> --private --template himarbravo/project-seed --clone
+   cd <name>
    ```
-2. Renombra el proyecto. El script sustituye el nombre en todos los archivos, renombra el paquete, borra esta sección y se borra a sí mismo:
+2. Rename the project. The script replaces the name in every file, renames the package, removes this section and deletes itself:
    ```bash
-   python3 scripts/init_project.py <nombre> --owner <usuario> --author "<Tu nombre>" \
-       --description "<Qué hace el proyecto>"
+   python3 scripts/init_project.py <name> --owner <user> --author "<Your name>" \
+       --description "<What the project does>"
    ```
-3. Instala, comprueba y sube el primer commit:
+3. Install, check and push the first commit:
    ```bash
    python3 -m venv .venv && source .venv/bin/activate
    pip install -e ".[dev]"
    ./scripts/check.sh
-   git add -A && git commit -m "chore: inicializar proyecto desde la semilla" && git push
+   git add -A && git commit -m "chore: initialize project from seed" && git push
    ```
-4. Configura el repositorio: crea los labels que usa [AGENTS.md](AGENTS.md), deja solo squash merge y protege `main`. Va después del primer push, porque a partir de aquí ya no se puede empujar directo a `main`:
+4. Configure the repository: create the labels [AGENTS.md](AGENTS.md) uses, allow squash merge only and protect `main`. It comes after the first push, because from then on nobody can push directly to `main`:
    ```bash
    ./scripts/setup_github.sh
    ```
-5. Adapta lo que es propio de cada proyecto: [docs/architecture.md](docs/architecture.md), [docs/project-structure.md](docs/project-structure.md) y la sección 4 de [AGENTS.md](AGENTS.md).
+5. Adapt what is specific to each project: [docs/architecture.md](docs/architecture.md), [docs/project-structure.md](docs/project-structure.md) and section 4 of [AGENTS.md](AGENTS.md).
 <!-- seed:end -->
 
-## Requisitos
+## Requirements
 
-- Python 3.11 o superior
+- Python 3.11 or later
 
-## Instalación para desarrollo
+## Development install
 
 ```bash
 git clone https://github.com/OWNER/my-project.git
@@ -47,32 +47,32 @@ source .venv/bin/activate
 pip install -e ".[dev]"
 ```
 
-## Uso
+## Usage
 
 ```bash
-my-project              # o: python -m my_project
+my-project              # or: python -m my_project
 ```
 
-## Desarrollo
+## Development
 
 ```bash
 pytest                  # tests
 ruff check .            # lint
-ruff format .           # formato
-mypy                    # tipos
-./scripts/check.sh      # todo lo anterior, como en la CI
+ruff format .           # format
+mypy                    # types
+./scripts/check.sh      # all of the above, as in CI
 ```
 
-## Documentación
+## Documentation
 
-| Documento | Para qué |
-|-----------|----------|
-| [AGENTS.md](AGENTS.md) | Cómo se trabaja: issues, ramas, commits, PRs |
-| [docs/project-structure.md](docs/project-structure.md) | Dónde está y dónde va cada cosa |
-| [docs/architecture.md](docs/architecture.md) | Cómo funciona por dentro |
-| [docs/versioning.md](docs/versioning.md) | Versiones y releases |
-| [docs/adr/](docs/adr/) | Decisiones de arquitectura |
+| Document | Purpose |
+|----------|---------|
+| [AGENTS.md](AGENTS.md) | How we work: issues, branches, commits, PRs |
+| [docs/project-structure.md](docs/project-structure.md) | Where everything is and where it goes |
+| [docs/architecture.md](docs/architecture.md) | How it works inside |
+| [docs/versioning.md](docs/versioning.md) | Versions and releases |
+| [docs/adr/](docs/adr/) | Architecture decisions |
 
-## Licencia
+## License
 
-[MIT](LICENSE). Si el proyecto necesita otra, cambia `LICENSE` y el campo `license` de `pyproject.toml`.
+[MIT](LICENSE). If the project needs another one, change `LICENSE` and the `license` field in `pyproject.toml`.
