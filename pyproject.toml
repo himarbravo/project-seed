@@ -4,8 +4,8 @@ build-backend = "hatchling.build"
 
 [project]
 name = "my-project"
-version = "0.1.0"  # Única fuente de verdad de la versión. Ver docs/versioning.md
-description = "Descripción corta del proyecto."
+version = "0.1.0"  # Single source of truth for the version. See docs/versioning.md
+description = "Short project description."
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.11"

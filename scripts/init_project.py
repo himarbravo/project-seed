@@ -60,7 +60,7 @@ def main() -> None:
         replacements['name = "AUTHOR"'] = f'name = "{args.author}"'
         replacements[f"(c) {year} AUTHOR"] = f"(c) {year} {args.author}"
     if args.description:
-        replacements["Descripción corta del proyecto."] = args.description
+        replacements["Short project description."] = args.description
 
     for path in text_files():
         try:
