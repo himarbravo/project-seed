@@ -18,6 +18,9 @@
 - Risk: <!-- standard or critical -->
 - Verification: <!-- Command or procedure, observed result and evidence gaps. -->
 
+- Prior criterion: <!-- Critical only: GitHub issue comment URL -->
+- Final review: <!-- Critical only: GitHub comment URL followed by the full reviewed head SHA -->
+
 ## Checklist
 
 - [ ] Rebased on `main` with no conflicts
