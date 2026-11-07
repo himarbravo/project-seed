@@ -22,3 +22,9 @@ Complete this page at project setup. Use stable IDs for journeys and invariants 
 6. For handoffs, record the base and current head, what was proved, what remains uncertain and the next concrete step in the issue or PR. Re-run the affected journey from a clean checkout when multiple PRs change it.
 
 CI checks that the PR provides the required fields. Review determines whether the claims are true and the evidence is sufficient. Repository admins must enable and verify branch protection for the check to block merges.
+
+## Independent criterion review
+
+For critical changes, the orchestrator must appoint a separate criterion reviewer (a subagent in a fresh context, or a qualified human). Before implementation, give the reviewer the issue, project contract, current behavior and primary sources. Withhold the proposed solution. The reviewer records their identity or session, observable expected results, negative cases and required evidence in a dated comment on the issue. Implementation waits for this record. Changes to the criteria require another independent review and a linked rationale.
+
+After implementation, the reviewer checks the diff and evidence against the agreed criteria and records a verdict and full head SHA in a GitHub comment. A new head requires a renewed review. The merge owner checks authorship, timing, verdict and SHA and resolves any policy or scope disagreement with the project owner. The workflow checks reference format and SHA equality. It cannot establish independence or evidence quality.
