@@ -33,3 +33,22 @@ jobs:
             echo "::error::The branch must be named '<type>/<issue-n>-<kebab-description>'. See AGENTS.md 2.2."
             exit 1
           fi
+      - name: Delivery evidence fields
+        env:
+          PR_BODY: ${{ github.event.pull_request.body }}
+        run: |
+          python3 - <<'PY'
+          import os
+          import re
+
+          body = re.sub(r"<!--.*?-->", "", os.environ["PR_BODY"], flags=re.S)
+          fields = {
+              "issue reference": r"^(?:Closes|Refs) #[1-9][0-9]*[ \t]*$",
+              "journey and invariant": r"^- Journey and invariant:[ \t]*\S.*$",
+              "risk": r"^- Risk:[ \t]*(?:standard|critical)[ \t]*$",
+              "verification": r"^- Verification:[ \t]*\S.*$",
+          }
+          missing = [name for name, pattern in fields.items() if not re.search(pattern, body, re.M)]
+          if missing:
+              raise SystemExit("Missing delivery evidence: " + ", ".join(missing))
+          PY
