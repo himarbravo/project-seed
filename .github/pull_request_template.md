@@ -2,7 +2,7 @@
 
 <!-- Summary in 1-3 sentences. -->
 
-Closes #
+<!-- Add Closes #N or Refs #N, following AGENTS.md. -->
 
 ## Why
 
@@ -11,6 +11,12 @@ Closes #
 ## How to test it
 
 <!-- Steps or commands to verify the change. -->
+
+## Delivery evidence
+
+- Journey and invariant: <!-- IDs and impact, or explain why neither changes. -->
+- Risk: <!-- standard or critical -->
+- Verification: <!-- Command or procedure, observed result and evidence gaps. -->
 
 ## Checklist
 
