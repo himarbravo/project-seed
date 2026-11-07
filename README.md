@@ -31,7 +31,7 @@ This repository is a template: an empty Python project with the working protocol
    ./scripts/setup_github.sh
    ```
    Details, manual steps and the private-repository limitation: [Protecting `main`](#protecting-main).
-5. Adapt what is specific to each project: [docs/architecture.md](docs/architecture.md), [docs/project-structure.md](docs/project-structure.md) and section 4 of [AGENTS.md](AGENTS.md).
+5. Define the [project contract](docs/project-contract.md) and adapt what is specific to each project: [docs/architecture.md](docs/architecture.md), [docs/project-structure.md](docs/project-structure.md) and section 4 of [AGENTS.md](AGENTS.md).
 <!-- seed:end -->
 
 ## Requirements
