@@ -27,6 +27,7 @@ my-project/
 │
 ├── docs/
 │   ├── project-structure.md     # ← this file
+│   ├── project-contract.md     # Goals, journeys, invariants and delivery protocol
 │   ├── architecture.md          # How the system works inside
 │   ├── versioning.md            # How versions and releases are made
 │   └── adr/                     # Architecture decision records

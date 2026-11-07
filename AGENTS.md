@@ -6,12 +6,14 @@ This document is the source of truth for any agent (Claude, Codex, Copilot, etc.
 
 ## 0. Before touching anything
 
-1. Read this whole file and [docs/project-structure.md](docs/project-structure.md). Do not assume you know the rules because you have worked on other projects.
+1. Read this whole file, [the project contract](docs/project-contract.md) and [docs/project-structure.md](docs/project-structure.md). Do not assume you know the rules because you have worked on other projects.
 2. Check the state: `git status` and `git branch --show-current`. If there are uncommitted changes that are not yours, do not touch or discard them: ask.
 3. If you are on `main`, do not edit anything yet: first an issue and a branch (section 2).
 4. Read the whole issue, comments included. If the acceptance criteria are ambiguous, ask in the issue before implementing.
 
 ---
+
+Before any critical implementation, follow the [independent criterion protocol](docs/project-contract.md#independent-criterion-review). Keep the criterion and final review links in the PR. A separate reviewer is required even when the implementer is an agent.
 
 ## 1. Principles
 
@@ -73,7 +75,7 @@ chore(ci): cache dependencies
 ### 2.4 Pull requests
 - Open the PR early as a **draft**: `gh pr create --draft --fill`.
 - Title = same format as a commit (it becomes the squash message).
-- Body following [.github/pull_request_template.md](.github/pull_request_template.md). It must include `Closes #<n>`.
+- Body following [.github/pull_request_template.md](.github/pull_request_template.md). Link the issue with `Closes #<n>` only if all acceptance criteria can be verified before merge. Otherwise use `Refs #<n>` and close after recording the remaining evidence. Follow the [delivery protocol](docs/project-contract.md#delivery-protocol).
 - Before marking it *ready for review*:
   - [ ] Rebased on `main` (`git fetch && git rebase origin/main`), no conflicts.
   - [ ] Lint, format and tests pass locally.
